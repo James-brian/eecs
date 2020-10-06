@@ -1,0 +1,4 @@
+
+	 {% for article in article_list %}
+	 	<li><span class='fa fa-pencil' style ="color:blue"></span><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li> 
+	 {% endfor %}

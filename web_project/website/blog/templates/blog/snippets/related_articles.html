@@ -1,0 +1,5 @@
+<ul>
+	 {% for emoji,article in mylist %}
+	 	<li>{{emoji}}<a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li> 
+	 {% endfor %}
+</ul>

@@ -1,0 +1,17 @@
+<ul >
+    {% for article in article_list %}
+        <li style="text-decoration: none"><a href="{{ article.get_absolute_url }}"> {{ article.title }}</a></li>
+
+         {% for tag in article.tags.all %}
+           <li style="text-decoration: none"><a href="{% url 'tagged' as my_url %}"> 	{{ tag }}</a></li>
+         {% endfor %}
+
+    {% endfor %}
+</ul>
+
+<ul>
+	{% for mt in common_tags %}
+	   <li style="text-decoration: none"><a href="{{ mt.get_absolute_url }}">
+	    {{ mt }}</a></li>
+	{% endfor %}
+</ul>

@@ -1,0 +1,74 @@
+{% extends "blog/articlebase.html" %}
+{% block content %}
+
+  <article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a  href="{% url 'user-articles' object.author.username %}" style="color:blue">{{ object.author }}</a>
+        <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+        {% if object.author == user %}
+          <div>
+            <button class="button1"><a style="color:white;" href="{% url 'article-update' object.id %}">Update</a></button>
+            <button class="button2"><a style="color:white;" href="{% url 'article-delete' object.id %}">Delete</a></button>
+          </div>
+        {% endif %}
+      <h1 class="article-title">{{ object.title }}</h1>
+      <img src="{{ object.coverimage.url }}" class="img-responsive" alt="">
+      <div style="word-break: break-all;">{{ object.content|safe }}</div>
+      <br>
+      <br>
+        <form action="{% url 'like_article' article.pk %}" method = "POST">
+             {% csrf_token %}
+            {% if user.is_authenticated %}
+                 {% if liked %}
+                  <button class="button3" name="article_id", value="{{ article.id }}"><span class="fa fa-thumbs-down"></span> Unlike</button>
+                  {% else %}
+                 <button class="button4" name="article_id", value="{{ article.id }}"><span class="fa fa-thumbs-up"></span> Like</button> 
+                 {% endif %}
+
+            {% else %}
+             <p><a href="{% url 'login' %}" style="color:blue">Login</a> to like!</p>
+
+            {% endif %}
+
+             - {{ total_likes }} Likes
+            
+        </form>
+        <div>
+          <P><small> related articles on <a class="mr-2" href="{% url 'category' article.category|slugify %}" style="color:blue">{{ article.category }}</a></small></P>
+
+                  
+        <div>
+          <h3>Related Articles</h3>
+          {% for article in similar_articles %}
+              <li>
+                <a href="{% url 'article-detail' article.id %}" style="color:blue">{{ article.title }}</a>
+              </li>
+          {% endfor %}
+        </div>
+        </div>
+        <br>
+        <h3>Comments...</h3>
+        <br>
+        {% if not article.comments.all %}
+            No Comments Yet...<small><a href="{% url 'add-comment' object.id %}">Leave a comment</a></small>
+        {% else %}
+           
+            {% for comment in article.comments.all %}
+            <strong>
+              {{comment.name}}
+              {{comment.date_added}}
+            </strong>
+          <br>
+             {{ comment.comment}}
+          <br>
+            {% endfor %}
+            <a href="{% url 'add-comment' object.id %}">Add Comment</a>
+          <br>
+        {% endif %}
+    </div>
+  </div>
+</article>
+
+{% endblock content %}

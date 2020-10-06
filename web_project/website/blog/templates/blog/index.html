@@ -1,0 +1,143 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Engineer &middot; James Moris </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'blog/css/indexstyle.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="{% url 'blog-index' %}" style="color:green" >James<b>Moris</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar" style="font-size:14px">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'stats-prob' %}">Stats&Prob</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'blog-about' %}">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'blog-blog' %}">Blog</a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'blog-contact' %}">Contact</a>
+      </li>    
+    </ul>
+    <ul class="navbar-nav " >
+      <a class="nav-item nav-link" href="{% url 'blog-articles' %}" >Articles</a>
+      {% if user.is_authenticated %}
+      <a class="nav-item nav-link" href="{% url 'article-create' %}">Create Article</a>
+      <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+      <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+      {% else %}
+      <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+      <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+      {% endif %}
+  </ul> 
+  </div> 
+ 
+</nav>
+
+<main>
+<!-- fixed Background -->
+
+  <div class ="fixed-bg">
+    <div class="txt" >
+      <h1>Hi! I'm James</h1>
+    </div>
+  </div>
+  <br>
+
+<!--- Two Column Section -->
+<div class="container-fluid padding">
+<div class="row padding">
+  <div class="col-lg-6">
+    <h2>I like to design and build both hardware and software.</h2>
+    <p>Engineering is a great tool for solving most of the world facing problems.</p>
+    <p>And i believe that engineering is what makes our life simple.</p>
+    <br>
+    <a href="" class="btn btn-primary">next tour</a>
+  </div>
+  <div>
+    <img src = "{% static 'blog/assets/img/lamp.png' %}" class="img-fluid">
+  </div>
+</div>
+</div>
+<hr class="my-4">
+<br>
+<!-- connect-->
+<div class="social-icons">
+      <ul>
+        <li><a href="https://www.linkedin.com/in/james-oigo/"><i class="fa fa-linkedin"></i></li></a>
+        <li><a href="https://www.pinterest.com/brianoigo785/"><i class="fa fa-pinterest"> </i></li></a>
+        <li><a href="https://github.com/James-brian"><i class="fa fa-github"></i></li></a>
+         <li><a href="https://feeds.feedburner.com/livelifefully/maCC"><i class="fa fa-rss"></i></li></a>
+      </ul>
+      
+</div>
+
+</main>
+<!-- share -->
+<!-- footer -->
+<footer>
+  <div class="container-fluid padding">
+    <div class="row text-center">
+    <div class="col-md-4">
+        <img src="{% static 'blog/assets/img/james.png' %}" style="width: 30px;">
+        <hr class="light">
+        <p style="color:#23A455">JAMES MORIS OIGO</p>
+        <p>I run this site and i believe that</p>
+        <p>your contributions or supportive</p>
+        <p>ideas are important as well.This</p>
+        <p>world can be transformed when</p>
+        <p>we team up to seek and find</p>
+        <p>better answers.</p>
+    </div>
+    <div class="col-md-4">
+        
+        <hr class ="light">
+        <p style="color:#23A455">DISCLAIMER</p>
+        <p>This site was built for purposes of sharing</p>
+        <p>knowledge, innovative ideas and also</p>
+        <p>professional advises.However,the site does not</p>
+         <p>contain other professional advises based on</p>
+         <p>research.Consult relevant professional cares</p>
+         <p>for further advise.Please read the <B><a href="{% url 'blog-privacy' %}" style="color:red;">Privacy Policy</a></B></p>
+         <p>and <B><a href="{% url 'blog-terms' %}" style="color:red;">Terms of Use</a></B> for this site.</p>
+    </div>
+    <div class="col-md-4">
+        
+        <hr class ="light">
+        <p style="color:#23A455">CREDITS:</p>
+        <p style="color:#23A455">Hosting by <B>Git</B></p>
+        <p style="color:#23A455">Design by <B>James Moris Oigo</B></p>
+        
+    </div>   
+    </div> 
+ 
+ </div>
+</div>
+
+</footer>
+
+</body>
+</html>
+
+

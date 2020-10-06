@@ -1,0 +1,516 @@
+/*
+    DEMO STYLE
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 13.68px -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+    background: #191c24;;
+    color:white;
+}
+
+p {
+    font-family: "Rubik", sans-serif;
+    color: #6c7293 !important;
+}
+h6 {
+    color: white;
+}
+h3 {
+    color: white;
+}
+h4 {
+color: grey;
+
+}
+label {
+    color: white;
+}
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.btn.btn-success{
+    background: transparent;
+    color:green;
+}
+.btn.btn-danger{
+    background: transparent;
+    color:red;
+}
+.y_content {
+    padding: 0 5px 6px;
+    position: relative;
+    width: 100%;
+    clear: both;
+    margin-top: 5px;
+    margin-left: 5px,
+    color: white;
+
+}
+/* ---- top navigation -------*/
+.navbar {
+    padding: 15px 10px;
+    color: white;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+.profile_pic {
+    width: 35%;
+    float: left
+}
+.img-circle.profile_img {
+    width: 70%;
+    background: white;
+    margin-left: 15%;
+    border: 1px solid rgba(52, 73, 94, 0.44);
+    border-radius: 50%;
+}
+}
+.profile_info {
+    padding: 10px;
+    width: 65%;
+    float: left
+}
+.profile_info span {
+    font-size: 13px;
+    line-height: 30px;
+    color: #BAB8B8
+}
+.profile_info h2 {
+    font-size: 14px;
+    color: #ECF0F1;
+    margin: 0;
+    font-weight: 300
+}
+.profile.img_2 {
+    text-align: center
+}
+.profile.img_2 .profile_pic {
+    width: 100%
+}
+.profile.img_2 .profile_pic .img-circle.profile_img {
+    width: 50%;
+    margin: 10px 0 0
+}
+.profile.img_2 .profile_info {
+    padding: 15px 10px 0;
+    width: 100%;
+    margin-bottom: 10px;
+    float: left
+}
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100vh;
+    z-index: 999;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    background: rgb(0,0,0,0.82)
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: #7386D5;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#dismiss:hover {
+    background: #fff;
+    color: #7386D5;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(59, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: transparent;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+
+}
+
+#sidebar .side_components{
+	padding-left: 0px;
+	padding-right: 20px;
+
+}
+
+#sidebar ul p {
+    color: 	#9966CC;
+    padding: 10px;
+
+}
+
+#sidebar ul li a {
+    padding: 10px;
+	font-size: 1.1em;
+    display: block;
+    color: 	#9966CC;
+
+}
+
+#sidebar ul li a:hover {
+    color: white;
+    background: black;
+    border-radius: 5px;
+    text-decoration: blink;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    background: #013220;
+    border-radius: 5px;
+
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.side_components ul li{
+  background: #013220;
+  border-radius: 5px;
+}
+
+
+
+
+ul a {
+    font-size: 0.9em !important;
+
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article{
+	background: green !important;
+    color: #fff !important;
+}
+
+a.article:hover{
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+.sidebar-footer {
+    bottom: 0px;
+    padding: 7px;
+    position: fixed;
+    width: 250px;
+    height:50px;
+    background: #2A3F54;
+    z-index:99;
+}
+.sidebar-footer a {
+    padding: 7px;
+    text-align: center;
+    width: 50%;
+    font-size: 17px;
+    display: block;
+    float: left;
+    background: #172D44;
+    cursor: pointer;
+}
+.sidebar-footer a:hover {
+    background: #425567
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+main .container.body .right_col {
+    background: grey;
+    padding: 10px 20px 0;
+    margin-left: 230px;
+}
+body .container.body {
+    background: grey;
+    padding: 10px 20px 0;
+    margin-left: 230px
+}
+.right_col{
+	background:#191c24;;
+}
+.col-md-55,
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    padding-right: 10px;
+    padding-left: 10px
+}
+.x_panel {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 17px;
+    display: inline-block;
+    background: black;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    opacity: 1;
+    transition: all .2s ease
+}
+.x_title {
+    border-bottom: 2px solid #E6E9ED;
+    padding: 1px 5px 6px;
+    margin-bottom: 10px;
+    color:white;
+}
+.x_content {
+    padding: 0 5px 6px;
+    position: relative;
+    width: 100%;
+    float: left;
+    clear: both;
+    margin-top: 5px;
+    color: white;
+}
+
+legend {
+    padding-bottom: 7px
+}
+
+.footer {
+    background-color: #202020;
+}
+
+.footer .footer-menu {
+    height: 41px;
+}
+
+.footer nav>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+.footer nav>ul a:not(.btn) {
+    color: #9A9A9A;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.footer nav>ul a:not(.btn):hover,
+.footer nav>ul a:not(.btn):focus {
+    color: #777777;
+}
+
+.footer .social-area {
+    padding: 15px 0;
+}
+
+.footer .social-area h5 {
+    padding-bottom: 15px;
+}
+
+.footer .social-area>a:not(.btn) {
+    color: #9A9A9A;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 5px;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 20px;
+    text-align: center;
+}
+
+.footer .social-area>a:not(.btn):hover,
+.footer .social-area>a:not(.btn):focus {
+    color: #777777;
+}
+
+.footer .copyright {
+    color: #777777;
+    padding: 10px 15px;
+    margin: 10px 3px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.footer hr {
+    border-color: #DDDDDD;
+}
+
+.footer .title {
+    color: #777777;
+}
+
+.footer-default {
+    background-color: #F5F5F5;
+}
+
+.footer:not(.footer-big) nav>ul {
+    font-size: 14px;
+}
+
+.footer:not(.footer-big) nav>ul li {
+    margin-left: 20px;
+    float: left;
+}
+
+.footer:not(.footer-big) nav>ul a {
+    padding: 10px 0px;
+    margin: 10px 10px 10px 0px;
+}
+
+
+
+@media (min-width: 992px) {
+ 
+.footer {
+    height: 60px;
+}
+.footer .footer-menu {
+    float: left;
+}
+.footer .copyright {
+    float: right;
+}
+.footer:not(.footer-big) nav>ul li:first-child {
+    margin-left: 0;
+}
+
+}
+
+

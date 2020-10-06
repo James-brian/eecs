@@ -1,0 +1,98 @@
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700'); */
+@import url('../css/fonts.css');
+
+
+html body main {
+	height:100%;
+	width: 100%;
+	font-family: 'Poppins', sans-serif;
+	color: #222;
+}
+
+.fixed-bg {
+  background-image: url("../assets/img/elec.png");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+  text-align: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 800;
+  margin-top:;
+  margin-bottom:;
+  color: #fff;
+  text-shadow: 0 1px 5px #111;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);"
+}
+
+
+.social-icons{
+	right: 72px;
+	bottom: 35px;
+	position: fixed; 
+
+}
+.social-icons ul li{
+	list-style:none;
+	margin-top: 15px;
+	text-align: center;
+
+}
+
+
+.social-icons ul li .fa{
+	border-radius: 50%;
+	border: 1px solid #999;
+	padding: 5px;
+	display:block;
+}
+
+.social-icons ul li .fa:hover {
+    opacity: 0.7;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+.fa-rss {
+  background: #ff6600;
+  color: white;
+}
+footer{
+	background-color: #3f3f3f;
+	color: #d5d5d5;
+	padding-top: 2rem;
+}
+hr.light {
+	border-top: 1px solid #d5d5d5;
+	width:75%;
+	margin-top: .8rem;
+	margin-bottom: 1rem;
+
+}
+footer a{
+	color:#d5d5d5;
+}

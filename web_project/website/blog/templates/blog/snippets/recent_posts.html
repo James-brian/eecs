@@ -1,0 +1,6 @@
+{% for post in post_list %}
+<div class="post clearfix">
+	<img src="{{ post.img.url }}" alt="">
+	<a href="{{ post.get_absolute_url }}" class="title"><h4>{{ post.title }}</h4></a>
+</div>
+{% endfor %}

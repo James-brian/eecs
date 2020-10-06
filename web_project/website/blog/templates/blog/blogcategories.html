@@ -1,0 +1,59 @@
+{% extends "blog/blogbase.html" %}
+
+{% block content %}
+{% if category_posts %}
+    <h1> {{cat}}</h1>
+
+{% for post in category_posts %}
+<div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+    <div class="post-image">
+        <div>
+            <img src="{{ post.img.url }}" class="img" alt="">
+        </div>
+        <div class="post-info flex-row">
+            <span><i class="fa fa-user text-gray"></i>&nbsp;&nbsp;James O. Moris</span>
+            <span><i class="fa fa-calendar text-gray"></i>&nbsp;&nbsp;{{ post.date_posted }}</span>
+            <span>EE&CS</span>
+        </div>
+    </div>
+    <div class="post-title">
+        <a href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
+        <p>{{post.excerpt}}
+        </p>
+        <a class="btn post-btn" href="{% url 'post-detail' post.id %}" >Continue Reading <i class="fa fa-arrow-right"></i></a>
+    </div>
+</div>
+{% endfor %}
+<hr>
+<br>
+<br>
+
+
+
+{% if is_paginated %}
+
+      {% if page_obj.has_previous %}
+        <a class="btn btn-default mb-4" href="?page=1" style="color:lightblue;">First</a>
+        <a class="btn btn-default mb-4" href="?page={{ page_obj.previous_page_number }}"style="color:lightblue;">Previous</a>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <a class="btn btn-default mb-4" href="?page={{ num }}" style="color:lightblue;">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-default mb-4" href="?page={{ num }}" style="color:lightblue;">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a class="btn btn-default mb-4" href="?page={{ page_obj.next_page_number }}" style="color:lightblue;">Next</a>
+        <a class="btn btn-default mb-4" href="?page={{ page_obj.paginator.num_pages }}" style="color:lightblue;">Last</a>
+      {% endif %}
+
+    {% endif %}
+{% else %}
+<h1> The page was not found!</h1>
+{% endif %}
+{% endblock content %}
+
+

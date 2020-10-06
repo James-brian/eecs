@@ -1,0 +1,16 @@
+{% extends "blog/singleblogbase.html" %}
+
+{% block content %}    
+
+    <div>
+    <img src="{{ object.img.url }}" class="img-responsive" alt="">
+    </div>
+    <h1 class="post-title">{{object.title}}</h1>
+    <div class="post-information" style="color:blue">
+    <span>{{object.date_posted}}/</span>
+    <span> EE&CS /</span>
+    <span> By James O. Moris</span>
+    </div>
+    <div class = "post-content"> {{object.content|safe}}</div>   
+
+{% endblock content %}

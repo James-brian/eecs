@@ -1,0 +1,45 @@
+{% extends "blog/base.html" %}
+{% block content %}
+{% if category_articles %}
+    <h1>Articles on {{ cat }}</h1>
+    {% for article in category_articles %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ article.author.profile.image.url }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'user-articles' article.author.username %}">{{ article.author }}</a>
+              <small class="text-muted">{{ article.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'article-detail' article.id %}">{{ article.title }}</a></h2>
+            <hr>
+          </div>
+        </article>
+    {% endfor %}
+    
+      {% if is_paginated %}
+
+      {% if page_obj.has_previous %}
+        <a class="btn btn-default mb-4" href="?page=1" style="color:lightblue;">First</a>
+        <a class="btn btn-default mb-4" href="?page={{ page_obj.previous_page_number }}"style="color:lightblue;">Previous</a>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <a class="btn btn-default mb-4" href="?page={{ num }}" style="color:lightblue;">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-default mb-4" href="?page={{ num }}" style="color:lightblue;">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a class="btn btn-default mb-4" href="?page={{ page_obj.next_page_number }}" style="color:lightblue;">Next</a>
+        <a class="btn btn-default mb-4" href="?page={{ page_obj.paginator.num_pages }}" style="color:lightblue;">Last</a>
+      {% endif %}
+
+    {% endif %}
+{% else %}
+    <h1> Sorry this page does not exist</h1>
+{% endif %}
+
+{% endblock content %}
+

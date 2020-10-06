@@ -1,0 +1,13 @@
+    {% for article in article_list %}
+       <div class="post-content" data-aos="flip-up" data-aos-delay="200" style="padding-top: 50px">
+            <div class="post-image">
+                <div>
+                    <img src="{{ article.coverimage.url }}" class="img" alt="" style="width:60%">
+                </div>
+                <div class="post-info flex-row">
+                    <p><span><i class="fa fa-calendar text-gray"></i>&nbsp;&nbsp;{{ article.date_posted }}</span>
+                    <br>
+               <span> <a href="{{ article.get_absolute_url }}" style="color:blue">{{ article.title }}</a></span></p>
+            </div>
+        </div>
+    {% endfor %}
